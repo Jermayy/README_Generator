@@ -37,10 +37,94 @@ const questions = [{
             if (descInput) {
                 return true;
             } else {
-                descInput = ""
+                console.log("Enter a description");
             }
         }
     },
+    {
+        type: "input",
+        name: "installation",
+        message: "Enter installation instructions for your application (Required)",
+        validate: (installInput) => {
+            if (installInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Enter instructions for your application (Required)",
+        validate: (usageInput) => {
+            if (usageInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
+        type: "list",
+        name: "license",
+        message: "Select licensing for your app (Required)",
+        choices: ["GPL V3", "EPL 1.0", "MIT", "MPL 2.0"],
+        validate: (licenseInput) => {
+            if (licenseInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
+        type: "confirm",
+        name: "confirmIssues",
+        message: "Report any issues?",
+        default: false,
+    },
+    {
+        type: "input",
+        name: "contributors",
+        message: "List other contributors, if no others type "
+        none "?(Required)",
+        validate: (contributorsInput) => {
+            if (contributorsInput) {
+                return true;
+            } else {
+                console.log("Enter none for no contributors");
+                return false;
+            }
+        }
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "List any tests performed on this app (Required)",
+        validate: (testsInput) => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log("Enter 'none' if no tests to note");
+                return false;
+            }
+        },
+    },
+    {
+        type: "input",
+        name: "contact",
+        message: "Add your email address for other developers to contact you (Required)",
+        validate: (contactInput) => {
+            if (contactInput) {
+                return true;
+            } else {
+                console.log("Contact info added!");
+                return false;
+            }
+        },
+    },
+
 
 
 ];

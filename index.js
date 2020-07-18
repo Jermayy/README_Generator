@@ -6,11 +6,11 @@ const questions = [{
         type: "input",
         name: "repoName",
         message: "Enter the title of your application (Required)",
+        default: "myApp",
         validateName: (name) => {
             if (name) {
                 return true;
             } else {
-                console.log("Enter the name of your app!");
                 return false;
             }
         }
@@ -33,6 +33,7 @@ const questions = [{
         type: "input",
         name: "description",
         message: "Enter a description for your application",
+        default: "",
         validate: (descInput) => {
             if (descInput) {
                 return true;
@@ -87,8 +88,7 @@ const questions = [{
     {
         type: "input",
         name: "contributors",
-        message: "List other contributors, if no others type "
-        none "?(Required)",
+        message: "List other contributors, if no others type none ?(Required)",
         validate: (contributorsInput) => {
             if (contributorsInput) {
                 return true;

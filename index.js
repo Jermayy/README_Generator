@@ -158,7 +158,7 @@ function init() {
 
         function licence() {
             if (res.licence === "GPL V3") {
-                fs.appendFile(
+                fs.appendFileSync(
                     "./dist/README.md",
                     `![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)`,
                     (err) => {
@@ -215,7 +215,7 @@ function init() {
         //Add Table of Contents Function
 
         function tableOfContentsGen() {
-            fs.appendFile("./dist/README.md", `${tableOfContent}`, (err) => {
+            fs.appendFileSync("./dist/README.md", `${tableOfContent}`, (err) => {
                 if (err) {
                     console.log(err);
                     return;
@@ -240,7 +240,7 @@ function init() {
         }
 
         function installInstruction() {
-            fs.appendFile("./dist.README.md", `## Installation:\n${res.installation}\n`,
+            fs.appendFileSync("./dist.README.md", `## Installation:\n${res.installation}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
@@ -252,7 +252,7 @@ function init() {
         }
 
         function usageInstruction() {
-            fs.appendFile("./dist.README.md", `## Usage:\n${res.usage}\n`,
+            fs.appendFileSync("./dist.README.md", `## Usage:\n${res.usage}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
@@ -264,7 +264,7 @@ function init() {
         }
 
         function licensingInfo() {
-            fs.appendFile("./dist.README.md", `## License Details:  \n The Eclipse Public License (EPL) is a free and open source software license most notably used for the Eclipse IDE and other projects by the Eclipse Foundation.  \n  \n Software under the GPL may be run for all purposes, including commercial purposes and even as a tool for creating proprietary software, such as when using GPL-licensed compilers.  \n  \n The MIT License is a free software license that was created at the Massachusetts Institute of Technology (MIT). It is a permissive license, meaning that it allows programmers to put the code in proprietary software on the condition that the license is given with that software, and GPL-compatible, meaning that the GPL permits programmers to combine and redistribute it with software that uses the MIT License.  \n  \n The MPL is a simple copyleft license. The MPL's "file-level" copyleft is designed to encourage contributors to share modifications they make to your code, while still allowing them to combine your code with code under other licenses (open or proprietary) with minimal restrictions.`,
+            fs.appendFileSync("./dist.README.md", `## License Details:  \n The Eclipse Public License (EPL) is a free and open source software license most notably used for the Eclipse IDE and other projects by the Eclipse Foundation.  \n  \n Software under the GPL may be run for all purposes, including commercial purposes and even as a tool for creating proprietary software, such as when using GPL-licensed compilers.  \n  \n The MIT License is a free software license that was created at the Massachusetts Institute of Technology (MIT). It is a permissive license, meaning that it allows programmers to put the code in proprietary software on the condition that the license is given with that software, and GPL-compatible, meaning that the GPL permits programmers to combine and redistribute it with software that uses the MIT License.  \n  \n The MPL is a simple copyleft license. The MPL's "file-level" copyleft is designed to encourage contributors to share modifications they make to your code, while still allowing them to combine your code with code under other licenses (open or proprietary) with minimal restrictions.`,
                 (err) => {
                     if (err) {
                         console.log(err);
@@ -276,7 +276,7 @@ function init() {
         }
 
         function contributorList() {
-            fs.appendFile("./dist.README.md", ` \n## List of Contributors: \n${res.contributors}\n`,
+            fs.appendFileSync("./dist.README.md", ` \n## List of Contributors: \n${res.contributors}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
@@ -288,7 +288,7 @@ function init() {
         }
 
         function test() {
-            fs.appendFile("./dist.README.md", ` \n## Tests: \n${res.tests}\n`,
+            fs.appendFileSync("./dist.README.md", ` \n## Tests: \n${res.tests}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
@@ -301,7 +301,7 @@ function init() {
 
 
         function question() {
-            fs.appendFile(
+            fs.appendFileSync(
                 "./dist/README.md",
                 `## Questions:\n Here is a link to my github:  \nhttps://github.com/${res.username}  \n Email me at:  \n${res.contact}  \nfor additional questions\n`,
                 (err) => {

@@ -1,5 +1,5 @@
-# README GENERATOR 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+# myApp 
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)  
  ## Table of Contents:  
 [1. Description](#Description)  
 [2. Installation](#Installation)  
@@ -9,9 +9,11 @@
 [6. Tests](#Tests)  
 [7. Questions](#Questions)  
 ## Description:
-README Generator Test
+testing desc
+## Installation:
+install descep
 ## Usage:
-call app in terminal using node index.js and follow the prompts
+asfdf
 ## License Details:  
  The Eclipse Public License (EPL) is a free and open source software license most notably used for the Eclipse IDE and other projects by the Eclipse Foundation.  
   
@@ -21,13 +23,13 @@ call app in terminal using node index.js and follow the prompts
   
  The MPL is a simple copyleft license. The MPL's "file-level" copyleft is designed to encourage contributors to share modifications they make to your code, while still allowing them to combine your code with code under other licenses (open or proprietary) with minimal restrictions. 
 ## List of Contributors: 
-Just Me :) 
+f
  
 ## Tests: 
-No Tests
+sdfsdf
 ## Questions:
  Here is a link to my github:  
 https://github.com/Jermayy  
  Email me at:  
-jeremyVDLRC@gmail.com  
+sdfsdf  
 for additional questions

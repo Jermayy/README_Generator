@@ -248,7 +248,7 @@ function init() {
 
         //Installation Instructions
         function installInstruction() {
-            fs.appendFileSync("./distREADME.md", `## Installation:\n${res.installation}\n`,
+            fs.appendFileSync("./dist/README.md", `## Installation:\n${res.installation}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);

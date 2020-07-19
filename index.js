@@ -166,10 +166,12 @@ function init() {
                             console.log(err);
                             return;
                         }
-                        console.log("Licence: GPL V3");
-                        tableOfContentsGen();
+
                     }
                 );
+                console.log("Licence: GPL V3");
+                tableOfContentsGen();
+
             } else if (res.licence === "EPL 1.0") {
                 fs.appendFileSync(
                     "./dist/README.md",
@@ -179,10 +181,11 @@ function init() {
                             console.log(err);
                             return;
                         }
-                        console.log("Licence: EPL 1.0");
-                        tableOfContentsGen();
+
                     }
                 );
+                console.log("Licence: EPL 1.0");
+                tableOfContentsGen();
             } else if (res.licence === "MIT") {
                 fs.appendFileSync(
                     "./dist/README.md",
@@ -192,10 +195,11 @@ function init() {
                             console.log(err);
                             return;
                         }
-                        console.log("Licence: MIT");
-                        tableOfContentsGen();
+
                     }
                 );
+                console.log("Licence: MIT");
+                tableOfContentsGen();
             } else if (res.licence === "MPL 2.0") {
                 fs.appendFileSync(
                     "./dist/README.md",
@@ -205,10 +209,11 @@ function init() {
                             console.log(err);
                             return;
                         }
-                        console.log("Licence: MPL 2.0");
-                        tableOfContentsGen();
+
                     }
                 );
+                console.log("Licence: MPL 2.0");
+                tableOfContentsGen();
             }
         }
 
@@ -220,102 +225,119 @@ function init() {
                     console.log(err);
                     return;
                 }
-                console.log("Table of Contents added");
-                descriptionGen();
+
             });
+            console.log("Table of Contents added");
+            descriptionGen();
         }
 
         // Add Description
 
         function descriptionGen() {
-            fs.appendFile("./dist.README.md", `## Description:\n${res.description}\n`,
+            fs.appendFileSync("./dist/README.md", `## Description:\n${res.description}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
                         return
                     }
-                    console.log("Description added");
-                    installInstruction();
                 })
+            console.log("Description added");
+            installInstruction();
         }
 
+
+        //Installation Instructions
         function installInstruction() {
-            fs.appendFileSync("./dist.README.md", `## Installation:\n${res.installation}\n`,
+            fs.appendFileSync("./distREADME.md", `## Installation:\n${res.installation}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
                         return
                     }
-                    console.log("Installation instructions added");
-                    usageInstruction();
+
                 })
+            console.log("Installation instructions added");
+            usageInstruction();
         }
 
+
+        // Usage Instructions
         function usageInstruction() {
-            fs.appendFileSync("./dist.README.md", `## Usage:\n${res.usage}\n`,
+            fs.appendFileSync("./dist/README.md", `## Usage:\n${res.usage}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
                         return
                     }
-                    console.log("Usage instructions added");
-                    licensingInfo();
+
                 })
+            console.log("Usage instructions added");
+            licensingInfo();
         }
+
+
+        //Add License info
 
         function licensingInfo() {
-            fs.appendFileSync("./dist.README.md", `## License Details:  \n The Eclipse Public License (EPL) is a free and open source software license most notably used for the Eclipse IDE and other projects by the Eclipse Foundation.  \n  \n Software under the GPL may be run for all purposes, including commercial purposes and even as a tool for creating proprietary software, such as when using GPL-licensed compilers.  \n  \n The MIT License is a free software license that was created at the Massachusetts Institute of Technology (MIT). It is a permissive license, meaning that it allows programmers to put the code in proprietary software on the condition that the license is given with that software, and GPL-compatible, meaning that the GPL permits programmers to combine and redistribute it with software that uses the MIT License.  \n  \n The MPL is a simple copyleft license. The MPL's "file-level" copyleft is designed to encourage contributors to share modifications they make to your code, while still allowing them to combine your code with code under other licenses (open or proprietary) with minimal restrictions.`,
+            fs.appendFileSync("./dist/README.md", `## License Details:  \n The Eclipse Public License (EPL) is a free and open source software license most notably used for the Eclipse IDE and other projects by the Eclipse Foundation.  \n  \n Software under the GPL may be run for all purposes, including commercial purposes and even as a tool for creating proprietary software, such as when using GPL-licensed compilers.  \n  \n The MIT License is a free software license that was created at the Massachusetts Institute of Technology (MIT). It is a permissive license, meaning that it allows programmers to put the code in proprietary software on the condition that the license is given with that software, and GPL-compatible, meaning that the GPL permits programmers to combine and redistribute it with software that uses the MIT License.  \n  \n The MPL is a simple copyleft license. The MPL's "file-level" copyleft is designed to encourage contributors to share modifications they make to your code, while still allowing them to combine your code with code under other licenses (open or proprietary) with minimal restrictions.`,
                 (err) => {
                     if (err) {
                         console.log(err);
                         return
                     }
-                    console.log("License info added");
-                    contributorList();
+
                 })
+            console.log("License info added");
+            contributorList();
         }
 
+
+        //Add Contributors
         function contributorList() {
-            fs.appendFileSync("./dist.README.md", ` \n## List of Contributors: \n${res.contributors}\n`,
+            fs.appendFileSync("./dist/README.md", ` \n## List of Contributors: \n${res.contributors}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
                         return
                     }
-                    console.log("Contributor List added");
-                    test();
+
                 })
+            console.log("Contributor List added");
+            test();
         }
 
+
+        //Add Tests
         function test() {
-            fs.appendFileSync("./dist.README.md", ` \n## Tests: \n${res.tests}\n`,
+            fs.appendFileSync("./dist/README.md", ` \n## Tests: \n${res.tests}\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
                         return
                     }
-                    console.log("Tests listed");
-                    question();
+
                 })
+            console.log("Tests listed");
+            question();
         }
 
-
+        //Add Contact Details
         function question() {
             fs.appendFileSync(
                 "./dist/README.md",
-                `## Questions:\n Here is a link to my github:  \nhttps://github.com/${res.username}  \n Email me at:  \n${res.contact}  \nfor additional questions\n`,
+                `## Questions:\n Here is a link to my github:  \nhttps://github.com/${res.userName}  \n Email me at:  \n${res.contact}  \nfor additional questions\n`,
                 (err) => {
                     if (err) {
                         console.log(err);
                         return;
                     }
-                    console.log("Contact info added");
+
 
 
 
                 })
 
-
+            console.log("Contact info added");
 
 
 

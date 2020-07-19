@@ -1,7 +1,5 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const { title } = require("process");
-const { table } = require("console");
 
 // array of questions for user
 const questions = [{
@@ -73,8 +71,8 @@ const questions = [{
         name: "licence",
         message: "Select licensing for your app (Required)",
         choices: ["GPL V3", "EPL 1.0", "MIT", "MPL 2.0"],
-        validate: (licenseInput) => {
-            if (licenseInput) {
+        validate: (licenceInput) => {
+            if (licenceInput) {
                 return true;
             } else {
                 return false;

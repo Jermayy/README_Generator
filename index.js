@@ -1,5 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const { title } = require("process");
 const { table } = require("console");
 
 // array of questions for user
@@ -69,7 +70,7 @@ const questions = [{
     },
     {
         type: "list",
-        name: "license",
+        name: "licence",
         message: "Select licensing for your app (Required)",
         choices: ["GPL V3", "EPL 1.0", "MIT", "MPL 2.0"],
         validate: (licenseInput) => {
@@ -159,9 +160,9 @@ function init() {
 
         function licence() {
             if (res.licence === "GPL V3") {
-                fs.appendFileSync(
+                fs.appendFile(
                     "./dist/README.md",
-                    `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`,
+                    `![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)`,
                     (err) => {
                         if (err) {
                             console.log(err);

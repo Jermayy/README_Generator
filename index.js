@@ -119,8 +119,9 @@ const questions = [{
         validate: (contactInput) => {
             if (contactInput) {
                 return true;
+
             } else {
-                console.log("Contact info added!");
+
                 return false;
             }
         },
@@ -140,7 +141,7 @@ function init() {
         title();
 
         function title() {
-            fs.writeToFile("./dist/README.md",
+            fs.writeFile("./dist/README.md",
                 `# ${res.repoName} \r\n`,
                 (err) => {
                     if (err) {
@@ -309,7 +310,7 @@ function init() {
                         console.log(err);
                         return;
                     }
-                    console.log("Contact info added!");
+                    console.log("Contact info added");
 
 
 
